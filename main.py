@@ -21,7 +21,7 @@ import plotly.offline as py
 
 image = Image.open('banner.jpg')
 st.image(image, caption='Dadehkav Stock Prediction App')
-st.title('Stock Prediction App (15 Minutes Interval)')
+st.title('Stock Prediction App (5 Minutes Interval)')
 
 today = dt.date.today()
 
@@ -50,7 +50,7 @@ period = n_years
 
 @st.cache
 def load_data(ticker):
-    data = yf.download(ticker, start_date, end_date, interval='15m')
+    data = yf.download(ticker, start_date, end_date, interval='5m')
     data.reset_index(inplace=True)
     return data
 
